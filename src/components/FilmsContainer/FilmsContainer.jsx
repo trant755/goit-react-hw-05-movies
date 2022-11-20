@@ -25,7 +25,7 @@ const FilmsContainer = ({ films }) => {
 };
 
 FilmsContainer.propTypes = {
-  film: PropTypes.arrayOf(PropTypes.object).isRequired,
+  film: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default FilmsContainer;

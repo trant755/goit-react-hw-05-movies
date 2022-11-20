@@ -6,4 +6,6 @@ export const CastList = styled.ul`
   gap: 16px;
 `;
 
-export const CastItem = styled.li``;
+export const CastItem = styled.li`
+  width: 150px;
+`;
