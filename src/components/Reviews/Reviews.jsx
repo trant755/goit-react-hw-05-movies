@@ -20,14 +20,18 @@ const Reviews = () => {
   return (
     <Box p={4}>
       <SC.ReviewsList>
-        {reviews.map(review => {
-          return (
-            <SC.ReviewsItem key={review.id}>
-              <SC.Title>{review.author}</SC.Title>
-              <p>{review.content}</p>
-            </SC.ReviewsItem>
-          );
-        })}
+        {reviews.length === 0 ? (
+          <p>Not Found</p>
+        ) : (
+          reviews.map(review => {
+            return (
+              <SC.ReviewsItem key={review.id}>
+                <SC.Title>{review.author}</SC.Title>
+                <p>{review.content}</p>
+              </SC.ReviewsItem>
+            );
+          })
+        )}
       </SC.ReviewsList>
     </Box>
   );

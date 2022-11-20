@@ -21,24 +21,28 @@ const Cast = () => {
   return (
     <Box p={4}>
       <SC.CastList>
-        {cast.map(actor => {
-          return (
-            <SC.CastItem key={actor.id}>
-              <Box width="150px">
-                {actor.profile_path ? (
-                  <img
-                    src={`${imageUrl + actor.profile_path}`}
-                    alt={actor.name}
-                  />
-                ) : (
-                  <Box height="230px" bg={'dark'} />
-                )}
-              </Box>
-              <p>{actor.name}</p>
-              <p>{actor.character}</p>
-            </SC.CastItem>
-          );
-        })}
+        {cast.length === 0 ? (
+          <p>Not Found</p>
+        ) : (
+          cast.map(actor => {
+            return (
+              <SC.CastItem key={actor.id}>
+                <Box width="150px">
+                  {actor.profile_path ? (
+                    <img
+                      src={`${imageUrl + actor.profile_path}`}
+                      alt={actor.name}
+                    />
+                  ) : (
+                    <Box height="230px" bg={'dark'} />
+                  )}
+                </Box>
+                <p>{actor.name}</p>
+                <p>{actor.character}</p>
+              </SC.CastItem>
+            );
+          })
+        )}
       </SC.CastList>
     </Box>
   );

@@ -12,6 +12,5 @@ export const BackBtn = ({ to, children }) => {
 };
 
 BackBtn.propTypes = {
-  to: PropTypes.object.isRequired,
   children: PropTypes.node,
 };
