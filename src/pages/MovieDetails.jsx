@@ -1,5 +1,5 @@
 import FilmInfo from 'components/FilmInfo/FilmInfo';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'helpers/API';
 import { BackBtn } from '../components/BackBtn/BackBtn';
@@ -24,8 +24,10 @@ const MovieDetails = () => {
         <BackBtn to={BackLink}>Go Back</BackBtn>
       </Box>
       {film && <FilmInfo film={film} />}
-      {film && <MoreMovieInfo />}
-      <Outlet />
+      {film && <MoreMovieInfo location={location} />}
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };

@@ -22,7 +22,7 @@ const Reviews = () => {
       <SC.ReviewsList>
         {reviews.map(review => {
           return (
-            <SC.ReviewsItem key={review.author}>
+            <SC.ReviewsItem key={review.id}>
               <SC.Title>{review.author}</SC.Title>
               <p>{review.content}</p>
             </SC.ReviewsItem>
