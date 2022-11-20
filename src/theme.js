@@ -1,18 +1,10 @@
 export const theme = {
   colors: {
-    body: '#e7ecf2',
-    black: '#000',
-    white: '#fff',
-    grey: '#f3f6f9',
-    textGrey: '#8e9ca8',
-    text: '#2a2a2a',
-    background: '#fff',
-    primary: '#07c',
-    secondary: '#e7ecf2',
-    accent: '#609',
-    muted: '#f6f6f6',
-    darkGrey: '#c7c7c7',
-    statsColor: '#fff',
+    grey: '#e2e2e2',
+    text: '#76777c',
+    accent: '#90ddff',
+    accentLight: '#e2ffff',
+    dark: '#0f1b36',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -41,6 +33,7 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid',
+    midle: '2px solid',
   },
   radii: {
     none: '0',

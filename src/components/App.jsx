@@ -1,18 +1,27 @@
-// import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { Box } from './Box';
-// import * as API from '../helpers/API';
-// import { Button } from './Button';
-// import { Loader } from './Loader';
-// import { ToastCnt } from './ToastContainer';
-// import { toast } from 'react-toastify';
+import { lazy } from 'react';
+import SharedLayout from './SharedLayout/SharedLayout';
+import Home from 'pages/Home';
+
+const Movies = lazy(() => import('pages/Movies'));
+const MovieDetails = lazy(() => import('pages/MovieDetails'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 export const App = () => {
   return (
-    <Box
-      display="grid"
-      gridTemplateColumns="1fr"
-      gridGap="16px"
-      pb="24px"
-    ></Box>
+    <Box>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:moviesId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+        </Route>
+      </Routes>
+    </Box>
   );
 };
